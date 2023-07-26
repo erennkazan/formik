@@ -2,12 +2,12 @@ import React from 'react'
 import { useField } from 'formik';
 
 
-function CustomInput({label,...props}) {
+function CustomSelect({label,...props}) {
   const [field,meta] = useField(props);
   return (
     <>
       <label>{label}</label>
-      <input {...field} {...props}
+      <select {...field} {...props}
       className={meta.error ? 'input-error': ''}
       />
       {meta.error && <div className='error'>{meta.error}</div>}
@@ -15,4 +15,4 @@ function CustomInput({label,...props}) {
   )
 }
 
-export default CustomInput
+export default CustomSelect
